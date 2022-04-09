@@ -1,6 +1,11 @@
 #include "grafturret.h"
 
-grafTurret::grafTurret()
+grafTurret::grafTurret(int px, int py, bool spin)
+{
+
+}
+
+void grafTurret::Actualizar()
 {
 
 }

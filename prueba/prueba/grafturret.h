@@ -7,7 +7,10 @@
 class grafTurret
 {
 public:
-    grafTurret();
+    grafTurret(int px, int py, bool spin );
+    void Actualizar();
+
+
 };
 
 #endif // GRAFTURRET_H
