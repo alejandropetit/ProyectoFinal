@@ -8,10 +8,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     scene = new QGraphicsScene;
     scene->setSceneRect(0,0,800,800);
-    int px = 400, py = 50,width = 100, height = 200;
+    int px = 50, py = 50,width = 100, height = 200;
     bool bounce = 0;
-    double tilt = 1.5;
+    double tilt = 45;
     muro = new grafWall(px, py,width, height, tilt,bounce);
+    turret = new grafTurret(px,py,true);
+    scene->addItem(turret);
     scene->addItem(muro);
     ui->graphicsView->setScene(scene);
 

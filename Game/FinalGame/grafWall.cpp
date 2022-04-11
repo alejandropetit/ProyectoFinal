@@ -22,7 +22,7 @@ void grafWall::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
 {
     painter->setPen(QPen(color, 1));
     painter->setBrush(QBrush(pared));
-    painter->rotate(45);
+    painter->rotate(Tilt);
     painter->drawRect(boundingRect());
 }
 
