@@ -3,7 +3,6 @@
 
 #include <QPainter>
 #include <QGraphicsItem>
-#include <QTransform>
 
 class grafWall: public QGraphicsItem
 {
@@ -16,8 +15,6 @@ private:
     int Px, Py, Width, Height, Tilt;
     QColor color;
     QPixmap pared;
-    QTransform t;
-
 };
 
 #endif // GRAFWALL_H
