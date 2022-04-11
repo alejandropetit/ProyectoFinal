@@ -590,9 +590,9 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_imagenes.cpp
 qrc_imagenes.cpp: ../FinalGame/imagenes.qrc \
 		/home/jose/Qt/6.2.1/gcc_64/libexec/rcc \
-		../FinalGame/images/gray.png \
 		../FinalGame/images/right.png \
-		../FinalGame/images/black.png \
+		../FinalGame/images/gray.jpeg \
+		../FinalGame/images/black.jpeg \
 		../FinalGame/images/left.png
 	/home/jose/Qt/6.2.1/gcc_64/libexec/rcc -name imagenes ../FinalGame/imagenes.qrc -o qrc_imagenes.cpp
 

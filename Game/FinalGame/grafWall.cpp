@@ -3,8 +3,8 @@
 grafWall::grafWall(int px, int py, int width, int height, double tilt , bool bounce)
 {
     Px = px, Py = py, Width = width, Height = height, Tilt = tilt;
-    if(bounce) pared.load(":/images/black.png"), color = Qt::black;
-    else pared.load(":/images/gray.png"), color = Qt::gray;
+    if(bounce) pared.load(":/images/black.jpeg"), color = Qt::black;
+    else pared.load(":/images/gray.jpeg"), color = Qt::gray;
 
 }
 
