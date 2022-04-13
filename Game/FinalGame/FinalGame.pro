@@ -10,21 +10,26 @@ CONFIG += c++11
 
 SOURCES += \
     grafHowitzer.cpp \
+    grafShell.cpp \
     grafTurret.cpp \
     grafWall.cpp \
     main.cpp \
     mainwindow.cpp \
+    signin.cpp \
     wall.cpp
 
 HEADERS += \
     grafHowitzer.h \
+    grafShell.h \
     grafTurret.h \
     grafWall.h \
     mainwindow.h \
+    signin.h \
     wall.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    signin.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

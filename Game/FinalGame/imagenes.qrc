@@ -4,5 +4,6 @@
         <file>images/left.png</file>
         <file>images/gray.jpeg</file>
         <file>images/black.jpeg</file>
+        <file>images/1.png</file>
     </qresource>
 </RCC>

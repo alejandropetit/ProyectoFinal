@@ -10,3 +10,8 @@ void grafHowitzer::Actualizar(int px, int py, bool spin)
 {
 
 }
+
+void grafHowitzer::mejorar()
+{
+
+}

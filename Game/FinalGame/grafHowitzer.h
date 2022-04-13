@@ -10,6 +10,10 @@ public:
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     void Actualizar(int px, int py, bool spin);
+    void mejorar();
+
+private:
+    QPixmap howitzer = QPixmap(":/imagenes/howitz_0.png");
 
 
 };
