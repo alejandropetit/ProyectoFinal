@@ -600,11 +600,19 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_imagenes.cpp
 qrc_imagenes.cpp: ../FinalGame/imagenes.qrc \
 		/home/jose/Qt/6.2.1/gcc_64/libexec/rcc \
+		../FinalGame/images/howitz_1r.png \
 		../FinalGame/images/right.png \
+		../FinalGame/images/howitz_3r.png \
+		../FinalGame/images/howitz_2r.png \
 		../FinalGame/images/1.png \
+		../FinalGame/images/howitz_1.png \
 		../FinalGame/images/gray.jpeg \
 		../FinalGame/images/black.jpeg \
-		../FinalGame/images/left.png
+		../FinalGame/images/left.png \
+		../FinalGame/images/howitz_3.png \
+		../FinalGame/images/howitz_2.png \
+		../FinalGame/images/howitz_0r.png \
+		../FinalGame/images/howitz_0.png
 	/home/jose/Qt/6.2.1/gcc_64/libexec/rcc -name imagenes ../FinalGame/imagenes.qrc -o qrc_imagenes.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
@@ -760,9 +768,28 @@ moc_mainwindow.cpp: ../FinalGame/mainwindow.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qtextoption.h \
 		../FinalGame/grafTurret.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
+		../FinalGame/grafHowitzer.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QLabel \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qlabel.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qframe.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpicture.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qtextdocument.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QPushButton \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qpushbutton.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QDoubleSpinBox \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qspinbox.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qvalidator.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qregularexpression.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qlocale.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QGroupBox \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qgroupbox.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QGraphicsView \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qgraphicsview.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qscrollarea.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QDebug \
 		../FinalGame/signin.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QDialog \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qdialog.h \
@@ -930,7 +957,7 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 ####### Compile
 
 grafHowitzer.o: ../FinalGame/grafHowitzer.cpp ../FinalGame/grafHowitzer.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QGraphicsItem \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qtguiglobal.h \
@@ -1031,7 +1058,8 @@ grafHowitzer.o: ../FinalGame/grafHowitzer.cpp ../FinalGame/grafHowitzer.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qrgb.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qrgba64.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qimage.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpixelformat.h
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpixelformat.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QObject
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o grafHowitzer.o ../FinalGame/grafHowitzer.cpp
 
 grafShell.o: ../FinalGame/grafShell.cpp ../FinalGame/grafShell.h
@@ -1399,9 +1427,28 @@ main.o: ../FinalGame/main.cpp ../FinalGame/mainwindow.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qtextoption.h \
 		../FinalGame/grafTurret.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
+		../FinalGame/grafHowitzer.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QLabel \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qlabel.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qframe.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpicture.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qtextdocument.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QPushButton \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qpushbutton.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QDoubleSpinBox \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qspinbox.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qvalidator.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qregularexpression.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qlocale.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QGroupBox \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qgroupbox.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QGraphicsView \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qgraphicsview.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qscrollarea.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QDebug \
 		../FinalGame/signin.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QDialog \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qdialog.h \
@@ -1424,7 +1471,6 @@ main.o: ../FinalGame/main.cpp ../FinalGame/mainwindow.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qcoreapplication_platform.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qguiapplication.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qinputmethod.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qlocale.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qguiapplication_platform.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../FinalGame/main.cpp
 
@@ -1572,63 +1618,32 @@ mainwindow.o: ../FinalGame/mainwindow.cpp ../FinalGame/mainwindow.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qtextoption.h \
 		../FinalGame/grafTurret.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
+		../FinalGame/grafHowitzer.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QLabel \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qlabel.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qframe.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpicture.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qtextdocument.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QPushButton \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qpushbutton.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qabstractbutton.h \
-		../FinalGame/signin.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QDialog \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qdialog.h \
-		ui_mainwindow.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QVariant \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/QAction \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qaction.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QApplication \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qapplication.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qcoreapplication.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qeventloop.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qfuture.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qfutureinterface.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qmutex.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qresultstore.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qfuture_impl.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qthreadpool.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qthread.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qdeadlinetimer.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qelapsedtimer.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qrunnable.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qexception.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qapplicationpermission.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qcoreapplication_platform.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qguiapplication.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qinputmethod.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qlocale.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qguiapplication_platform.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QDoubleSpinBox \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qspinbox.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qabstractspinbox.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qvalidator.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qregularexpression.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qlocale.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QGroupBox \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qgroupbox.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QGraphicsView \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qgraphicsview.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qscrollarea.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qframe.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QLabel \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qlabel.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpicture.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qtextdocument.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QMenu \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qmenu.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QMenuBar \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qmenubar.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QStatusBar \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qstatusbar.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QVBoxLayout \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qboxlayout.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qlayout.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qgridlayout.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QWidget
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QDebug \
+		../FinalGame/signin.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QDialog \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qdialog.h \
+		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../FinalGame/mainwindow.cpp
 
 signin.o: ../FinalGame/signin.cpp ../FinalGame/signin.h \

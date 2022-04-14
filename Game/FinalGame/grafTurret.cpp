@@ -6,6 +6,6 @@ grafTurret::grafTurret(int px, int py, bool spin)
     if(spin)Turret.load(":/images/right.png");
     else Turret.load(":/images/left.png");
     this->setPos(px, py);
-    setPixmap(Turret.scaled(197,158));
+    setPixmap(Turret.scaled(62,50));
 }
 

@@ -18,7 +18,6 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -28,11 +27,6 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QGraphicsView *graphicsView;
-    QWidget *verticalLayoutWidget;
-    QVBoxLayout *verticalLayout;
-    QPushButton *pushButton;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_2;
     QPushButton *pushButton_6;
     QMenuBar *menubar;
     QMenu *menuMejoras;
@@ -53,34 +47,10 @@ public:
         graphicsView = new QGraphicsView(centralwidget);
         graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
         graphicsView->setGeometry(QRect(190, 10, 601, 541));
-        verticalLayoutWidget = new QWidget(centralwidget);
-        verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(10, 20, 160, 89));
-        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        pushButton = new QPushButton(verticalLayoutWidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-
-        verticalLayout->addWidget(pushButton);
-
-        pushButton_3 = new QPushButton(verticalLayoutWidget);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-
-        verticalLayout->addWidget(pushButton_3);
-
-        pushButton_2 = new QPushButton(verticalLayoutWidget);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-
-        verticalLayout->addWidget(pushButton_2);
-
         pushButton_6 = new QPushButton(centralwidget);
         pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
         pushButton_6->setGeometry(QRect(300, 340, 231, 61));
         MainWindow->setCentralWidget(centralwidget);
-        verticalLayoutWidget->raise();
-        graphicsView->raise();
-        pushButton_6->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 800, 22));
@@ -108,9 +78,6 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "Mejoras", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("MainWindow", "Menu Principal", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "Niveles", nullptr));
         pushButton_6->setText(QCoreApplication::translate("MainWindow", "Jugar", nullptr));
         menuMejoras->setTitle(QCoreApplication::translate("MainWindow", "Mejoras", nullptr));
         menuNiveles->setTitle(QCoreApplication::translate("MainWindow", "Niveles", nullptr));

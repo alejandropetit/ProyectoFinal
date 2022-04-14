@@ -6,10 +6,13 @@
 #include <QGraphicsItem>
 #include "grafWall.h"
 #include "grafTurret.h"
+#include "grafHowitzer.h"
 #include <QLabel>
 #include <QPushButton>
 #include <QDoubleSpinBox>
+#include <QGroupBox>
 #include <QGraphicsView>
+#include <QDebug>
 #include "signin.h"
 
 
@@ -25,11 +28,14 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void ocultar();
+    void nivel();
 
 
 private slots:
     void registro();
     void mostrar(QString t);
+    void rotate();
+    void disparar();
 
 private:
     Ui::MainWindow *ui;
@@ -40,6 +46,8 @@ private:
     QLabel *label[5];
     QDoubleSpinBox *spinbox[3];
     QGraphicsView *graphicsview;
+    QGroupBox *box;
+    grafHowitzer *howitzer;
     signin *ventana;
 
 };

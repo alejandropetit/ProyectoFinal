@@ -2,6 +2,8 @@
 #define SIGNIN_H
 
 #include <QDialog>
+#include <list>
+#include <fstream>
 
 namespace Ui {
 class signin;
@@ -23,6 +25,7 @@ private slots:
 
 private:
     Ui::signin *ui;
+    std::list<QString> nombres;
 };
 
 #endif // SIGNIN_H
