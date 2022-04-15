@@ -9,6 +9,7 @@
 #include "grafHowitzer.h"
 #include <QLabel>
 #include <QPushButton>
+#include "grafShell.h"
 #include <QDoubleSpinBox>
 #include <QGroupBox>
 #include <QGraphicsView>
@@ -35,6 +36,7 @@ private slots:
     void registro();
     void mostrar(QString t);
     void rotate();
+    void total();
     void disparar();
 
 private:
@@ -47,6 +49,7 @@ private:
     QDoubleSpinBox *spinbox[3];
     QGraphicsView *graphicsview;
     QGroupBox *box;
+    grafShell *shell;
     grafHowitzer *howitzer;
     signin *ventana;
 

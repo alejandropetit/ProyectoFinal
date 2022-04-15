@@ -15,8 +15,9 @@ SOURCES += \
     grafWall.cpp \
     main.cpp \
     mainwindow.cpp \
-    signin.cpp \
-    wall.cpp
+    popup.cpp \
+    shell.cpp \
+    signin.cpp
 
 HEADERS += \
     grafHowitzer.h \
@@ -24,11 +25,13 @@ HEADERS += \
     grafTurret.h \
     grafWall.h \
     mainwindow.h \
-    signin.h \
-    wall.h
+    popup.h \
+    shell.h \
+    signin.h
 
 FORMS += \
     mainwindow.ui \
+    popup.ui \
     signin.ui
 
 # Default rules for deployment.

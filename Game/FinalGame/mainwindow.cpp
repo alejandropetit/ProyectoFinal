@@ -12,8 +12,10 @@ MainWindow::MainWindow(QWidget *parent)
     ventana = new signin;
     scene = new QGraphicsScene;
     box = new QGroupBox("alejandro", this);
-    howitzer = new grafHowitzer(120,130,0,1);
+    //howitzer = new grafHowitzer(120,130,0,1);
     turret = new grafTurret(100,100,1);
+    //shell = new grafShell(turret->Px+91, turret->Py+37, 0, 0, 0);
+    //shell = new grafShell();
     button[0] = new QPushButton("Calcular Total", this);
     button[1] = new QPushButton("Disparar", this);
     button[2] = new QPushButton("Jugar",this);
@@ -44,6 +46,8 @@ MainWindow::MainWindow(QWidget *parent)
     scene->addEllipse(30,20,10,10);
     graphicsview->setGeometry(0,0,800,600);
     graphicsview->setScene(scene);
+    spinbox[0]->setMaximum(90);
+    spinbox[0]->setMinimum(-15);
     //
 
     //signals
@@ -51,7 +55,8 @@ MainWindow::MainWindow(QWidget *parent)
     QObject::connect(ventana, SIGNAL(back(QString)),this, SLOT(mostrar(QString)));
     connect(button[2],SIGNAL(clicked()),this,SLOT(registro()));
     connect(spinbox[0], SIGNAL(editingFinished()), this, SLOT(rotate()));
-    connect(button[1],SIGNAL(clicked()),this,SLOT());
+    connect(button[0],SIGNAL(clicked()), this ,SLOT(total()));
+    connect(button[1],SIGNAL(clicked()),this,SLOT(disparar()));
     //
 
     ui->pushButton_6->hide();
@@ -82,12 +87,12 @@ void MainWindow::ocultar()
 
 void MainWindow::nivel()
 {
- scene->addItem(turret);
- scene->addItem(howitzer);
+ turret->add(scene);
+ scene->addLine(120,137,120,228);//211,137);
+
+ scene->addEllipse(29,39,182,182);
  scene->addRect(300,300,50,50);
  scene->addRect(330,340,40,10);
- //scene->update();
- //scene->addLine(22,22,45,68);
 }
 
 void MainWindow::registro()
@@ -126,12 +131,17 @@ void MainWindow::mostrar(QString t)
 void MainWindow::rotate()
 {
 
-    howitzer->Actualizar(5,10,spinbox[0]->value(),1);
+    turret->Actualizar(turret->Px,turret->Py,spinbox[0]->value(),turret->Spin);
+}
+
+void MainWindow::total()
+{
+    turret->howitzer->bullet->Actualizar(turret->Px,turret->Py,spinbox[0]->value(),turret->Spin,spinbox[0]->value(),0);
 }
 
 void MainWindow::disparar()
 {
-
+    turret->howitzer->bullet->disparar();
 }
 
 

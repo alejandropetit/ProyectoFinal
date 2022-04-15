@@ -4,6 +4,10 @@
 #include <QDialog>
 #include <list>
 #include <fstream>
+#include <map>
+#include <QString>
+
+using namespace std;
 
 namespace Ui {
 class signin;
@@ -26,6 +30,8 @@ private slots:
 private:
     Ui::signin *ui;
     std::list<QString> nombres;
+    map <string, string> datos;
+    map <string, string>::iterator I;
 };
 
 #endif // SIGNIN_H
