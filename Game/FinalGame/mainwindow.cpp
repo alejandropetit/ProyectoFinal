@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     graphicsview = new QGraphicsView(this);
     ventana = new signin;
     scene = new QGraphicsScene;
+    shell = new grafShell(0,0,0,0);
     box = new QGroupBox("alejandro", this);
     //howitzer = new grafHowitzer(120,130,0,1);
     turret = new grafTurret(100,100,1);
@@ -89,7 +90,7 @@ void MainWindow::nivel()
 {
  turret->add(scene);
  scene->addLine(120,137,120,228);//211,137);
-
+ scene->addItem(shell);
  scene->addEllipse(29,39,182,182);
  scene->addRect(300,300,50,50);
  scene->addRect(330,340,40,10);
@@ -98,6 +99,7 @@ void MainWindow::nivel()
 void MainWindow::registro()
 {
     ventana->show();
+    ventana->setGeometry(this->x()+200,this->y()+150,400,300);
 }
 
 

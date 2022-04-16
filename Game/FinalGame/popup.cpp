@@ -6,6 +6,7 @@ popup::popup(QWidget *parent) :
     ui(new Ui::popup)
 {
     ui->setupUi(this);
+    label = new QLabel(this);
 }
 
 popup::~popup()

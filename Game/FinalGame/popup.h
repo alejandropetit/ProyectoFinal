@@ -2,6 +2,7 @@
 #define POPUP_H
 
 #include <QDialog>
+#include <QLabel>
 
 namespace Ui {
 class popup;
@@ -15,8 +16,11 @@ public:
     explicit popup(QWidget *parent = nullptr);
     ~popup();
 
+
 private:
     Ui::popup *ui;
+    QLabel *label;
+    friend class signin;
 };
 
 #endif // POPUP_H
