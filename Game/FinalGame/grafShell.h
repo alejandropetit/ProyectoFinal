@@ -2,18 +2,27 @@
 #define GRAFSHELL_H
 
 #include <QGraphicsPixmapItem>
+#include <QTimer>
+#include <QObject>
 
 
-class grafShell: public QGraphicsPixmapItem
+class grafShell: public QObject, public QPixmap, public QGraphicsPixmapItem
 {
+    //Q_OBJECT
 public:
     grafShell(int px, int py, double tilt, bool spin);
-    void actualizar(int px, int py, int vx, int vy, double mass, double wind = 0);
+    void Actualizar( int px, int py , double tilt,bool spin);
+    void move(double T);
+
+
 
 private:
-    int Px, Py, Vx, Vy;
+    double Px , Py , Spin;
+    double Tilt;
+    double Vx = 20, Vy =-40;
     double Mass, Wind ;
     QPixmap kugeln;
+
 };
 
 #endif // GRAFSHELL_H

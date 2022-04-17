@@ -15,6 +15,7 @@
 #include <QGraphicsView>
 #include <QDebug>
 #include "signin.h"
+#include <QTimer>
 
 
 QT_BEGIN_NAMESPACE
@@ -38,6 +39,7 @@ private slots:
     void rotate();
     void total();
     void disparar();
+    void Actualizar();
 
 private:
     Ui::MainWindow *ui;
@@ -52,6 +54,9 @@ private:
     grafShell *shell;
     grafHowitzer *howitzer;
     signin *ventana;
+    QTimer *time;
+    int i = 1;
+    double T ;
 
 };
 #endif // MAINWINDOW_H

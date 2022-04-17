@@ -13,6 +13,8 @@ public:
 
 private:
     grafShell *grafshell1;
+
+
 };
 
 #endif // SHELL_H

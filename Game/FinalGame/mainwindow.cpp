@@ -10,8 +10,9 @@ MainWindow::MainWindow(QWidget *parent)
     //objetos
     graphicsview = new QGraphicsView(this);
     ventana = new signin;
+    time = new QTimer();
     scene = new QGraphicsScene;
-    shell = new grafShell(0,0,0,0);
+    //shell = new grafShell(0,0,0,0);
     box = new QGroupBox("alejandro", this);
     //howitzer = new grafHowitzer(120,130,0,1);
     turret = new grafTurret(100,100,1);
@@ -28,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
     for(int i = 0; i <3; i++){
         spinbox[i] = new QDoubleSpinBox(this);
     }
-
+    T = 0.0001;
     //
 
     //geometria
@@ -58,6 +59,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(spinbox[0], SIGNAL(editingFinished()), this, SLOT(rotate()));
     connect(button[0],SIGNAL(clicked()), this ,SLOT(total()));
     connect(button[1],SIGNAL(clicked()),this,SLOT(disparar()));
+    connect(time, SIGNAL(timeout()), this, SLOT(Actualizar()));
     //
 
     ui->pushButton_6->hide();
@@ -89,8 +91,10 @@ void MainWindow::ocultar()
 void MainWindow::nivel()
 {
  turret->add(scene);
- scene->addLine(120,137,120,228);//211,137);
- scene->addItem(shell);
+ //scene->addLine(120,137,120,228);//211,137);
+ scene->addLine(211,135,225,135);
+ scene->addLine(211,138,225,138);
+ //scene->addItem(shell);
  scene->addEllipse(29,39,182,182);
  scene->addRect(300,300,50,50);
  scene->addRect(330,340,40,10);
@@ -134,16 +138,27 @@ void MainWindow::rotate()
 {
 
     turret->Actualizar(turret->Px,turret->Py,spinbox[0]->value(),turret->Spin);
+
+    //turret->howitzer->bullet->Actualizar(turret->Px,turret->Py,spinbox[0]->value(),turret->Spin);
 }
 
 void MainWindow::total()
 {
-    turret->howitzer->bullet->Actualizar(turret->Px,turret->Py,spinbox[0]->value(),turret->Spin,spinbox[0]->value(),0);
+    //turret->howitzer->bullet->Actualizar(turret->Px,turret->Py,spinbox[0]->value(),turret->Spin,spinbox[0]->value(),0);
+
+    turret->Actualizar(100,100,0,0);
+    i++;
 }
 
 void MainWindow::disparar()
 {
-    turret->howitzer->bullet->disparar();
+    time->start(T);
+}
+
+void MainWindow::Actualizar()
+{
+    //ti +=T;
+    turret->howitzer->bullet->move(T);
 }
 
 
