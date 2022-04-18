@@ -12,15 +12,18 @@ class grafShell: public QObject, public QPixmap, public QGraphicsPixmapItem
 public:
     grafShell(int px, int py, double tilt, bool spin);
     void Actualizar( int px, int py , double tilt,bool spin);
-    void move(double T);
+    void move( double T);
+    void d(double mass, double joules, double tilt);
 
 
 
 private:
-    double Px , Py , Spin;
+    double Px , Py;
+    bool Spin;
     double Tilt;
     double Vx = 20, Vy =-40;
     double Mass, Wind ;
+    QString br, bl;
     QPixmap kugeln;
 
 };

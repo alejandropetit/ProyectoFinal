@@ -31,6 +31,10 @@ public:
     ~MainWindow();
     void ocultar();
     void nivel();
+    void dresden();
+    void sarajevo();
+    void grozni();
+    void aleppo();
 
 
 private slots:

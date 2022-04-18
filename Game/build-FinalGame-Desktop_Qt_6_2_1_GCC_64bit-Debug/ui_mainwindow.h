@@ -12,11 +12,9 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -26,8 +24,6 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QGraphicsView *graphicsView;
-    QPushButton *pushButton_6;
     QMenuBar *menubar;
     QMenu *menuMejoras;
     QMenu *menuNiveles;
@@ -44,12 +40,6 @@ public:
 ""));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        graphicsView = new QGraphicsView(centralwidget);
-        graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
-        graphicsView->setGeometry(QRect(190, 10, 601, 541));
-        pushButton_6 = new QPushButton(centralwidget);
-        pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
-        pushButton_6->setGeometry(QRect(300, 340, 231, 61));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -78,7 +68,6 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        pushButton_6->setText(QCoreApplication::translate("MainWindow", "Jugar", nullptr));
         menuMejoras->setTitle(QCoreApplication::translate("MainWindow", "Mejoras", nullptr));
         menuNiveles->setTitle(QCoreApplication::translate("MainWindow", "Niveles", nullptr));
         menuMenu_Principal->setTitle(QCoreApplication::translate("MainWindow", "Menu Principal", nullptr));

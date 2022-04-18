@@ -11,22 +11,22 @@ CONFIG += c++11
 SOURCES += \
     grafHowitzer.cpp \
     grafShell.cpp \
+    grafTarget.cpp \
     grafTurret.cpp \
     grafWall.cpp \
     main.cpp \
     mainwindow.cpp \
     popup.cpp \
-    shell.cpp \
     signin.cpp
 
 HEADERS += \
     grafHowitzer.h \
     grafShell.h \
+    grafTarget.h \
     grafTurret.h \
     grafWall.h \
     mainwindow.h \
     popup.h \
-    shell.h \
     signin.h
 
 FORMS += \

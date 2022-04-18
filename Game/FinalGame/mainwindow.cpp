@@ -50,6 +50,7 @@ MainWindow::MainWindow(QWidget *parent)
     graphicsview->setScene(scene);
     spinbox[0]->setMaximum(90);
     spinbox[0]->setMinimum(-15);
+    spinbox[1]->setMaximum(9000000);
     //
 
     //signals
@@ -62,8 +63,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(time, SIGNAL(timeout()), this, SLOT(Actualizar()));
     //
 
-    ui->pushButton_6->hide();
-    ui->graphicsView->hide();
+
     ocultar();
 
 
@@ -72,7 +72,15 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
-    //delete scene;
+    delete graphicsview;
+    delete ventana;
+    delete time;
+    delete scene;
+    delete box;
+    delete turret;
+    for(int i = 0; i < 3; i++) delete button[i];
+    for(int i = 0; i < 5; i++) delete label[i];
+    for(int i = 0; i < 3; i++) delete spinbox[i];
 }
 
 void MainWindow::ocultar()
@@ -90,20 +98,48 @@ void MainWindow::ocultar()
 
 void MainWindow::nivel()
 {
+ aleppo();
  turret->add(scene);
  //scene->addLine(120,137,120,228);//211,137);
- scene->addLine(211,135,225,135);
- scene->addLine(211,138,225,138);
+ //scene->addLine(211,135,225,135);
+ //scene->addLine(211,138,225,138);
  //scene->addItem(shell);
- scene->addEllipse(29,39,182,182);
- scene->addRect(300,300,50,50);
- scene->addRect(330,340,40,10);
+ //scene->addEllipse(29,39,182,182);
+ //scene->addRect(300,300,50,50);
+ //scene->addRect(330,340,40,10);
+
+}
+
+void MainWindow::dresden()
+{
+    scene->addPixmap(QPixmap(":/images/dresden.png"));
+    //turret->Actualizar();
+}
+
+void MainWindow::sarajevo()
+{
+    scene->addPixmap(QPixmap(":/images/sarajevo.png"));
+    //turret->Actualizar();
+}
+
+void MainWindow::grozni()
+{
+    scene->addPixmap(QPixmap(":/images/grozni.png"));
+    //turret->Actualizar();
+}
+
+void MainWindow::aleppo()
+{
+
+    scene->addPixmap(QPixmap(":/images/aleppo.png"));
+    turret->Actualizar(80,200,0,1);
 }
 
 void MainWindow::registro()
 {
     ventana->show();
     ventana->setGeometry(this->x()+200,this->y()+150,400,300);
+
 }
 
 
@@ -138,8 +174,6 @@ void MainWindow::rotate()
 {
 
     turret->Actualizar(turret->Px,turret->Py,spinbox[0]->value(),turret->Spin);
-
-    //turret->howitzer->bullet->Actualizar(turret->Px,turret->Py,spinbox[0]->value(),turret->Spin);
 }
 
 void MainWindow::total()
@@ -152,11 +186,13 @@ void MainWindow::total()
 
 void MainWindow::disparar()
 {
+    turret->howitzer->bullet->d(spinbox[2]->value(),spinbox[1]->value(),spinbox[0]->value());
     time->start(T);
 }
 
 void MainWindow::Actualizar()
 {
+    //turret->howitzer->shoot(spinbox[2]->value(),spinbox[1]->value(),spinbox[0]->value(), T);
     //ti +=T;
     turret->howitzer->bullet->move(T);
 }

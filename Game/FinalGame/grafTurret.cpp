@@ -7,7 +7,7 @@ grafTurret::grafTurret(int px, int py, bool spin)
     else Turret.load(":/images/left.png");
     this->setPos(px, py);
     setPixmap(Turret.scaled(62,50));
-    howitzer = new grafHowitzer(px+20,py+30,0,spin);
+    howitzer = new grafHowitzer(px+20,py+30,0,spin,0);
     //howitzer = new grafHowitzer(px+111,py+35,0,spin);
     //shell = new grafShell();
     //howitzer(px+20, py+30, );
@@ -34,9 +34,9 @@ void grafTurret::Actualizar(int px, int py, double tilt, bool spin)
         setPixmap(Turret.scaled(62,50));
     }
     setPos(px,py);
-    if(spin) howitzer->Actualizar(px+20,py+30,-tilt,spin);
-    else howitzer->setTransformOriginPoint(px+42, py+30);
-    howitzer->Actualizar(px-49,py+30,-tilt,spin);//-29
+    if(spin) howitzer->Actualizar(px+20,py+30,-tilt,spin,2);
+    else howitzer->Actualizar(px-49,py+30,tilt,spin,2);//-29
+
 
     Px = px, Py = py;
     Spin = spin;

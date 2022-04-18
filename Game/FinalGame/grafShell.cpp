@@ -10,15 +10,29 @@ grafShell::grafShell(int px, int py, double tilt, bool spin)
 
 void grafShell::Actualizar( int px, int py , double tilt,bool spin)
 {
-    double tilt1 = tilt;
-    tilt =  tilt - Tilt , Tilt = tilt1;
-    tilt = tilt * M_PI/180;
-    Px = 120+77*cos((Tilt-5)*M_PI/180), Py = 130-77*sin((Tilt-5)*M_PI/180);
+
+    //if(spin == 0) tilt = tilt - 180;
+
+    if(spin){
+        //setTransformOriginPoint(0,0);
+        //px = px+30;
+        //this->setPos(px,Py);
+        //this->setPos(px,Py);
+
+    }
+    else{
+        //setTransformOriginPoint(14,0);
+        //px = px+30;
+        //this->setPos(px,Py);
+        //this->setPos(Px,Py);
+        //Px = px+77*cos((-tilt-5)*M_PI/180), Py = py-77*sin((-tilt-5)*M_PI/180);
+    }
+    Px = px+77*cos((-tilt-5)*M_PI/180), Py = py-77*sin((-tilt-5)*M_PI/180);
+    this->setRotation(tilt);
     this->setPos(Px,Py);
-    this->setTransform(QTransform(cos(-tilt), sin(-tilt), -sin(-tilt), cos(-tilt), 0, 0),true);
 }
 
-void grafShell::move(double T)
+void grafShell::move( double T)
 {
     qDebug() << "maria";
     double ax = 0, ay = 9.8;//9;
@@ -27,6 +41,12 @@ void grafShell::move(double T)
     Px = Px + (Vx*T);
     Py = Py + (Vy*T);
     this->setPos(Px,Py);
+}
+
+void grafShell::d(double mass, double joules, double tilt)
+{
+    Vx = sqrt((2*joules/mass)*cos(tilt));
+    Vy = -sqrt((2*joules/mass)*sin(tilt));
 }
 
 
