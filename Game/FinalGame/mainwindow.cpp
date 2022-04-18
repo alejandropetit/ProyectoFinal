@@ -18,6 +18,10 @@ MainWindow::MainWindow(QWidget *parent)
     turret = new grafTurret(100,100,1);
     //shell = new grafShell(turret->Px+91, turret->Py+37, 0, 0, 0);
     //shell = new grafShell();
+    muro[0] = new grafWall(400,200,40,100,45,1);
+    school = new grafTarget(300, 400, 1, 1, 0, 0);
+    tank = new grafTarget(600, 450, 0, 1, 0, 0);
+    shell = new grafShell(70,70,0,1);
     button[0] = new QPushButton("Calcular Total", this);
     button[1] = new QPushButton("Disparar", this);
     button[2] = new QPushButton("Jugar",this);
@@ -133,6 +137,10 @@ void MainWindow::aleppo()
 
     scene->addPixmap(QPixmap(":/images/aleppo.png"));
     turret->Actualizar(80,200,0,1);
+    scene->addItem(shell);
+    scene->addItem(school);
+    scene->addItem(tank);
+    scene->addItem(muro[0]);
 }
 
 void MainWindow::registro()
@@ -194,9 +202,37 @@ void MainWindow::Actualizar()
 {
     //turret->howitzer->shoot(spinbox[2]->value(),spinbox[1]->value(),spinbox[0]->value(), T);
     //ti +=T;
-    turret->howitzer->bullet->move(T);
+    //turret->howitzer->shoot();
+    //turret->howitzer->bullet->move(T);
 }
 
+void MainWindow::keyPressEvent(QKeyEvent *press)
+{
+    switch (press->key()){
+    case Qt::Key_D: {
+        shell->setPos(shell->x()+1,shell->y());
+        if(shell->collidesWithItem(muro[0])){
+            qDebug() << "si choco mi perrito";
+        }
+        if(shell->collidesWithItem(school)){
+            qDebug() << "que te pasa es una escuela";
+        }
+        if(shell->collidesWithItem(tank)){
+            qDebug() << "plomo";
+        }
+     }break;
+    case Qt::Key_A: {
+        shell->setPos(shell->x()-1,shell->y());
+    }break;
+    case Qt::Key_S: {
+        shell->setPos(shell->x(),shell->y()+1);
+    }break;
+    case Qt::Key_W: {
+        shell->setPos(shell->x(),shell->y()-1);
+    }break;
+
+    }
+}
 
 
 

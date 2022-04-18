@@ -10,23 +10,6 @@ grafShell::grafShell(int px, int py, double tilt, bool spin)
 
 void grafShell::Actualizar( int px, int py , double tilt,bool spin)
 {
-
-    //if(spin == 0) tilt = tilt - 180;
-
-    if(spin){
-        //setTransformOriginPoint(0,0);
-        //px = px+30;
-        //this->setPos(px,Py);
-        //this->setPos(px,Py);
-
-    }
-    else{
-        //setTransformOriginPoint(14,0);
-        //px = px+30;
-        //this->setPos(px,Py);
-        //this->setPos(Px,Py);
-        //Px = px+77*cos((-tilt-5)*M_PI/180), Py = py-77*sin((-tilt-5)*M_PI/180);
-    }
     Px = px+77*cos((-tilt-5)*M_PI/180), Py = py-77*sin((-tilt-5)*M_PI/180);
     this->setRotation(tilt);
     this->setPos(Px,Py);
@@ -34,8 +17,8 @@ void grafShell::Actualizar( int px, int py , double tilt,bool spin)
 
 void grafShell::move( double T)
 {
-    qDebug() << "maria";
-    double ax = 0, ay = 9.8;//9;
+    //qDebug() << "maria";
+    double ax = 0, ay = 9.8;
     Vx = Vx + (ax*T);
     Vy = Vy + (ay*T);
     Px = Px + (Vx*T);

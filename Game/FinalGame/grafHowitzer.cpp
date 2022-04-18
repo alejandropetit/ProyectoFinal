@@ -9,6 +9,8 @@ grafHowitzer::grafHowitzer(int px, int py,double tilt, bool spin, unsigned char 
     else Spin = 1;
     bullet = new grafShell(px+91,py+5,tilt,spin);
     Actualizar(px, py, tilt, spin, efficiency);
+
+
 }
 
 
@@ -34,14 +36,15 @@ void grafHowitzer::Actualizar(int px, int py, double tilt, bool spin, unsigned c
     }
     Px = px, Py = py, Spin = spin, Tilt = tilt;
     this->setPos(px,py);
-    bullet->Actualizar(px,py,tilt,spin);//+91,py+5,tilt,spin);
-
+    bullet->Actualizar(px,py,tilt,spin);
 }
 
-void grafHowitzer::shoot(double mass, double joules, double tilt, double T)
+void grafHowitzer::shoot(QGraphicsScene *scene, double mass, double joules, double tilt, double T)
 {
     vx = (2*joules)/(mass*cos(tilt));
     vy = (2*joules)/(mass*sin(tilt));
+    scene->addItem(bullet);
+    //setPos(90,90);
     //bullet -> move(T);
 
 

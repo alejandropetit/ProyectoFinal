@@ -7,6 +7,7 @@
 #include <QGraphicsPixmapItem>
 #include <QObject>
 #include <math.h>
+#include <QGraphicsScene>
 
 class grafHowitzer : public QGraphicsPixmapItem, public QObject
 {
@@ -14,7 +15,7 @@ public:
     grafHowitzer(int px, int py,double tilt, bool spin, unsigned char efficiency);
     //int px, int py, double joules, double shellMass,double tilt, bool spin, unsigned char efficiency
     void Actualizar(int px, int py, double tilt ,bool spin, unsigned char efficiency);
-    void shoot(double mass, double joules, double tilt, double T);
+    void shoot(QGraphicsScene *scene,double mass, double joules, double tilt, double T);
     grafShell *bullet;
 
 
