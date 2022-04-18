@@ -7,6 +7,7 @@
 #include "grafWall.h"
 #include "grafTurret.h"
 #include "grafHowitzer.h"
+#include "grafTarget.h"
 #include <QLabel>
 #include <QPushButton>
 #include "grafShell.h"
@@ -36,6 +37,9 @@ public:
     void grozni();
     void aleppo();
 
+protected:
+    void keyPressEvent(QKeyEvent *press);
+
 
 private slots:
     void registro();
@@ -48,7 +52,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QGraphicsScene *scene;
-    grafWall *muro;
+    grafWall *muro[2];
     grafTurret *turret;
     QPushButton *button[3];
     QLabel *label[5];
@@ -57,6 +61,8 @@ private:
     QGroupBox *box;
     grafShell *shell;
     grafHowitzer *howitzer;
+    grafTarget *school;
+    grafTarget *tank;
     signin *ventana;
     QTimer *time;
     int i = 1;

@@ -6,7 +6,7 @@
 #include <QObject>
 
 
-class grafShell: public QObject, public QPixmap, public QGraphicsPixmapItem
+class grafShell: public QObject, public QGraphicsPixmapItem
 {
     //Q_OBJECT
 public:

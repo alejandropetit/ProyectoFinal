@@ -20,7 +20,7 @@ void grafTurret::add(QGraphicsScene *scene)
 
     scene->addItem(howitzer);
     scene->addItem(this);
-    scene->addItem(howitzer->bullet);
+    //scene->addItem(howitzer->bullet);
 
 
 }
