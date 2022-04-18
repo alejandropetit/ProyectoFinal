@@ -2,8 +2,13 @@
 #define SIGNIN_H
 
 #include <QDialog>
-#include <list>
 #include <fstream>
+#include <map>
+#include <QString>
+#include "popup.h"
+#include <QCloseEvent>
+
+using namespace std;
 
 namespace Ui {
 class signin;
@@ -16,6 +21,7 @@ class signin : public QDialog
 public:
     explicit signin(QWidget *parent = nullptr);
     ~signin();
+    void closeEvent(QCloseEvent *event);
 
 signals:
     void back(QString);
@@ -25,7 +31,9 @@ private slots:
 
 private:
     Ui::signin *ui;
-    std::list<QString> nombres;
+    popup *ventana;
+    map <string, string> datos;
+    map <string, string>::iterator I;
 };
 
 #endif // SIGNIN_H

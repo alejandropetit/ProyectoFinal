@@ -10,10 +10,14 @@ MainWindow::MainWindow(QWidget *parent)
     //objetos
     graphicsview = new QGraphicsView(this);
     ventana = new signin;
+    time = new QTimer();
     scene = new QGraphicsScene;
+    //shell = new grafShell(0,0,0,0);
     box = new QGroupBox("alejandro", this);
-    howitzer = new grafHowitzer(120,130,0,1);
+    //howitzer = new grafHowitzer(120,130,0,1);
     turret = new grafTurret(100,100,1);
+    //shell = new grafShell(turret->Px+91, turret->Py+37, 0, 0, 0);
+    //shell = new grafShell();
     button[0] = new QPushButton("Calcular Total", this);
     button[1] = new QPushButton("Disparar", this);
     button[2] = new QPushButton("Jugar",this);
@@ -25,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
     for(int i = 0; i <3; i++){
         spinbox[i] = new QDoubleSpinBox(this);
     }
-
+    T = 0.0001;
     //
 
     //geometria
@@ -44,6 +48,9 @@ MainWindow::MainWindow(QWidget *parent)
     scene->addEllipse(30,20,10,10);
     graphicsview->setGeometry(0,0,800,600);
     graphicsview->setScene(scene);
+    spinbox[0]->setMaximum(90);
+    spinbox[0]->setMinimum(-15);
+    spinbox[1]->setMaximum(9000000);
     //
 
     //signals
@@ -51,11 +58,12 @@ MainWindow::MainWindow(QWidget *parent)
     QObject::connect(ventana, SIGNAL(back(QString)),this, SLOT(mostrar(QString)));
     connect(button[2],SIGNAL(clicked()),this,SLOT(registro()));
     connect(spinbox[0], SIGNAL(editingFinished()), this, SLOT(rotate()));
-    connect(button[1],SIGNAL(clicked()),this,SLOT());
+    connect(button[0],SIGNAL(clicked()), this ,SLOT(total()));
+    connect(button[1],SIGNAL(clicked()),this,SLOT(disparar()));
+    connect(time, SIGNAL(timeout()), this, SLOT(Actualizar()));
     //
 
-    ui->pushButton_6->hide();
-    ui->graphicsView->hide();
+
     ocultar();
 
 
@@ -64,7 +72,15 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
-    //delete scene;
+    delete graphicsview;
+    delete ventana;
+    delete time;
+    delete scene;
+    delete box;
+    delete turret;
+    for(int i = 0; i < 3; i++) delete button[i];
+    for(int i = 0; i < 5; i++) delete label[i];
+    for(int i = 0; i < 3; i++) delete spinbox[i];
 }
 
 void MainWindow::ocultar()
@@ -82,17 +98,48 @@ void MainWindow::ocultar()
 
 void MainWindow::nivel()
 {
- scene->addItem(turret);
- scene->addItem(howitzer);
- scene->addRect(300,300,50,50);
- scene->addRect(330,340,40,10);
- //scene->update();
- //scene->addLine(22,22,45,68);
+ aleppo();
+ turret->add(scene);
+ //scene->addLine(120,137,120,228);//211,137);
+ //scene->addLine(211,135,225,135);
+ //scene->addLine(211,138,225,138);
+ //scene->addItem(shell);
+ //scene->addEllipse(29,39,182,182);
+ //scene->addRect(300,300,50,50);
+ //scene->addRect(330,340,40,10);
+
+}
+
+void MainWindow::dresden()
+{
+    scene->addPixmap(QPixmap(":/images/dresden.png"));
+    //turret->Actualizar();
+}
+
+void MainWindow::sarajevo()
+{
+    scene->addPixmap(QPixmap(":/images/sarajevo.png"));
+    //turret->Actualizar();
+}
+
+void MainWindow::grozni()
+{
+    scene->addPixmap(QPixmap(":/images/grozni.png"));
+    //turret->Actualizar();
+}
+
+void MainWindow::aleppo()
+{
+
+    scene->addPixmap(QPixmap(":/images/aleppo.png"));
+    turret->Actualizar(80,200,0,1);
 }
 
 void MainWindow::registro()
 {
     ventana->show();
+    ventana->setGeometry(this->x()+200,this->y()+150,400,300);
+
 }
 
 
@@ -126,12 +173,28 @@ void MainWindow::mostrar(QString t)
 void MainWindow::rotate()
 {
 
-    howitzer->Actualizar(5,10,spinbox[0]->value(),1);
+    turret->Actualizar(turret->Px,turret->Py,spinbox[0]->value(),turret->Spin);
+}
+
+void MainWindow::total()
+{
+    //turret->howitzer->bullet->Actualizar(turret->Px,turret->Py,spinbox[0]->value(),turret->Spin,spinbox[0]->value(),0);
+
+    turret->Actualizar(100,100,0,0);
+    i++;
 }
 
 void MainWindow::disparar()
 {
+    turret->howitzer->bullet->d(spinbox[2]->value(),spinbox[1]->value(),spinbox[0]->value());
+    time->start(T);
+}
 
+void MainWindow::Actualizar()
+{
+    //turret->howitzer->shoot(spinbox[2]->value(),spinbox[1]->value(),spinbox[0]->value(), T);
+    //ti +=T;
+    turret->howitzer->bullet->move(T);
 }
 
 

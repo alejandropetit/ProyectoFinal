@@ -11,24 +11,27 @@ CONFIG += c++11
 SOURCES += \
     grafHowitzer.cpp \
     grafShell.cpp \
+    grafTarget.cpp \
     grafTurret.cpp \
     grafWall.cpp \
     main.cpp \
     mainwindow.cpp \
-    signin.cpp \
-    wall.cpp
+    popup.cpp \
+    signin.cpp
 
 HEADERS += \
     grafHowitzer.h \
     grafShell.h \
+    grafTarget.h \
     grafTurret.h \
     grafWall.h \
     mainwindow.h \
-    signin.h \
-    wall.h
+    popup.h \
+    signin.h
 
 FORMS += \
     mainwindow.ui \
+    popup.ui \
     signin.ui
 
 # Default rules for deployment.

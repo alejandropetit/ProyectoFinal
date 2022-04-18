@@ -13,5 +13,12 @@
         <file>images/howitz_1r.png</file>
         <file>images/howitz_1.png</file>
         <file>images/howitz_0r.png</file>
+        <file>images/shell.png</file>
+        <file>images/sarajevo.png</file>
+        <file>images/grozni.png</file>
+        <file>images/dresden.png</file>
+        <file>images/aleppo.png</file>
+        <file>images/tank.png</file>
+        <file>images/school.png</file>
     </qresource>
 </RCC>

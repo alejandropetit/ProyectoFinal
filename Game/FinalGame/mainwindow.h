@@ -9,11 +9,13 @@
 #include "grafHowitzer.h"
 #include <QLabel>
 #include <QPushButton>
+#include "grafShell.h"
 #include <QDoubleSpinBox>
 #include <QGroupBox>
 #include <QGraphicsView>
 #include <QDebug>
 #include "signin.h"
+#include <QTimer>
 
 
 QT_BEGIN_NAMESPACE
@@ -29,13 +31,19 @@ public:
     ~MainWindow();
     void ocultar();
     void nivel();
+    void dresden();
+    void sarajevo();
+    void grozni();
+    void aleppo();
 
 
 private slots:
     void registro();
     void mostrar(QString t);
     void rotate();
+    void total();
     void disparar();
+    void Actualizar();
 
 private:
     Ui::MainWindow *ui;
@@ -47,8 +55,12 @@ private:
     QDoubleSpinBox *spinbox[3];
     QGraphicsView *graphicsview;
     QGroupBox *box;
+    grafShell *shell;
     grafHowitzer *howitzer;
     signin *ventana;
+    QTimer *time;
+    int i = 1;
+    double T ;
 
 };
 #endif // MAINWINDOW_H
