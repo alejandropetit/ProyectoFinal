@@ -12,11 +12,13 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     target.cpp \
+    turret.cpp \
     wall.cpp
 
 HEADERS += \
     mainwindow.h \
     target.h \
+    turret.h \
     wall.h
 
 FORMS += \

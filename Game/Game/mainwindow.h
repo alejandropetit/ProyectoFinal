@@ -7,6 +7,7 @@
 #include <QTimer>
 #include "wall.h"
 #include "target.h"
+#include "turret.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -27,6 +28,8 @@ private:
     QGraphicsView *graphicsview;
     QGraphicsScene *scene;
     QTimer *time;
+    turret *Turret;
+    int i = 0;
 
 };
 #endif // MAINWINDOW_H
