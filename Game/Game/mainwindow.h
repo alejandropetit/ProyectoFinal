@@ -4,7 +4,9 @@
 #include <QMainWindow>
 #include <QGraphicsView>
 #include <QGraphicsScene>
+#include <QTimer>
 #include "wall.h"
+#include "target.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,16 +19,14 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
-protected:
-    void keyPressEvent(QKeyEvent *press);
-
+public slots:
+    void move();
 
 private:
     Ui::MainWindow *ui;
     QGraphicsView *graphicsview;
     QGraphicsScene *scene;
-    wall *muro;
-    int t;
+    QTimer *time;
+
 };
 #endif // MAINWINDOW_H
