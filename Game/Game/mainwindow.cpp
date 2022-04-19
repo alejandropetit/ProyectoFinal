@@ -26,4 +26,5 @@ MainWindow::~MainWindow()
 
 void MainWindow::move()
 {
+
 }
