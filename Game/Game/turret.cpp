@@ -6,17 +6,25 @@ turret::turret(int px, int py, bool spin)
     if(spin)Turret.load(":/images/right.png"), Spin = 0;
     else Turret.load(":/images/left.png"), Spin = 1;
     setPixmap(Turret.scaled(93,75));
-    Actualizar(Px,Py,0,Spin);
+    Howitzer = new howitzer(px+20,py+30,0,spin,2);
+    Actualizar(px,py,0,spin);
 }
 
 void turret::Actualizar(int px, int py, double tilt, bool spin)
 {
-
     if(Spin != spin){
         if(spin)Turret.load(":/images/right.png");
         else Turret.load(":/images/left.png");
         setPixmap(Turret.scaled(124,100));
     }
     setPos(px,py);
+    if(spin) Howitzer->Actualizar(px+60,py+60,-tilt,spin,2);
+    else Howitzer->Actualizar(px-73,py+60,tilt,spin,2);
     Px = px, Py = py, Spin = spin;
+}
+
+void turret::add(QGraphicsScene *scene)
+{
+    scene->addItem(Howitzer);
+    scene->addItem(this);
 }

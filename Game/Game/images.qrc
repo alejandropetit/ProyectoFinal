@@ -8,5 +8,13 @@
         <file>images/plane.png</file>
         <file>images/right.png</file>
         <file>images/left.png</file>
+        <file>images/howitz_3r.png</file>
+        <file>images/howitz_3.png</file>
+        <file>images/howitz_2r.png</file>
+        <file>images/howitz_2.png</file>
+        <file>images/howitz_1r.png</file>
+        <file>images/howitz_1.png</file>
+        <file>images/howitz_0r.png</file>
+        <file>images/howitz_0.png</file>
     </qresource>
 </RCC>
