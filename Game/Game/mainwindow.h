@@ -8,6 +8,7 @@
 #include "wall.h"
 #include "target.h"
 #include "turret.h"
+#include "howitzer.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -28,6 +29,9 @@ private:
     QGraphicsView *graphicsview;
     QGraphicsScene *scene;
     QTimer *time;
+    //howitzer *Howitzer;
+    turret *Turret;
+    double t = 0;
 
 };
 #endif // MAINWINDOW_H
