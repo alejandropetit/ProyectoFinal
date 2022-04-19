@@ -28,8 +28,6 @@ private:
     QGraphicsView *graphicsview;
     QGraphicsScene *scene;
     QTimer *time;
-    turret *Turret;
-    int i = 0;
 
 };
 #endif // MAINWINDOW_H
