@@ -11,10 +11,12 @@ CONFIG += c++11
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
+    target.cpp \
     wall.cpp
 
 HEADERS += \
     mainwindow.h \
+    target.h \
     wall.h
 
 FORMS += \
