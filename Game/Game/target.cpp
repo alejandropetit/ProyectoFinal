@@ -28,11 +28,11 @@ void target::move(double T)
     switch(MovePattern){
     case 0:{
         double Ax = 0, Ay = 9.8;
-        Vx = Vx + (Ax*T);
-        Vy = Vy + (Ay*T);
-        Px = Px + (Vx*T);
-        Py = Py + (Vy*T);
-        setPos(Px,Py);
+        //Vx = Vx + (Ax*T);
+        //Vy = Vy + (Ay*T);
+        //Px = Px + (Vx*T);
+        //Py = Py + (Vy*T);
+        //setPos(Px,Py);
 
     }break;
     case 1:{

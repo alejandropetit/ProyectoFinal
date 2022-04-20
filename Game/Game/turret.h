@@ -11,11 +11,12 @@ public:
     turret(int px, int py, bool spin);
     void Actualizar(int px, int py, double tilt, bool spin);
     void add(QGraphicsScene *scene);
+    howitzer *Howitzer;
 
 private:
     int Px, Py, Spin;
     QPixmap Turret;
-    howitzer *Howitzer;
+
 };
 
 #endif // TURRET_H
