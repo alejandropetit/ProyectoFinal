@@ -12,6 +12,7 @@ SOURCES += \
     howitzer.cpp \
     main.cpp \
     mainwindow.cpp \
+    shell.cpp \
     target.cpp \
     turret.cpp \
     wall.cpp
@@ -19,6 +20,7 @@ SOURCES += \
 HEADERS += \
     howitzer.h \
     mainwindow.h \
+    shell.h \
     target.h \
     turret.h \
     wall.h

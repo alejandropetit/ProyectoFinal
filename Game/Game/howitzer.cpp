@@ -7,6 +7,7 @@ howitzer::howitzer(int px, int py,double tilt, bool spin, unsigned char efficien
     Howitzer.load(hr);
     if(spin)Spin = 0;
     else Spin = 1;
+    bullet = new shell(px,py,tilt,spin);
     Actualizar(px, py, tilt, spin, efficiency);
 }
 
@@ -29,6 +30,8 @@ void howitzer::Actualizar(int px, int py, double tilt, bool spin, unsigned char 
         this->setTransformOriginPoint(137,0);
         this->setRotation(tilt);
     }
+    bullet->Actualizar(px,py,tilt,spin);
     Px = px, Py = py, Spin = spin, Tilt = tilt;
     this->setPos(px,py);
+
 }

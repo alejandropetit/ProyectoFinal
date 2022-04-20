@@ -7,7 +7,7 @@ turret::turret(int px, int py, bool spin)
     else Turret.load(":/images/left.png"), Spin = 1;
     setPixmap(Turret.scaled(93,75));
     Howitzer = new howitzer(px+20,py+30,0,spin,2);
-    Actualizar(px,py,0,spin);
+    Actualizar(px,py,45,spin);
 }
 
 void turret::Actualizar(int px, int py, double tilt, bool spin)
@@ -27,4 +27,5 @@ void turret::add(QGraphicsScene *scene)
 {
     scene->addItem(Howitzer);
     scene->addItem(this);
+    scene->addItem(Howitzer->bullet);
 }
