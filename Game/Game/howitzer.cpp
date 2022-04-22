@@ -35,3 +35,9 @@ void howitzer::Actualizar(int px, int py, double tilt, bool spin, unsigned char 
     this->setPos(px,py);
 
 }
+
+void howitzer::shoot()
+{
+    bullet->Actualizar(Px,Py,Tilt,Spin);
+    bullet->move(0.1);
+}

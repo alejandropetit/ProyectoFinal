@@ -9,6 +9,7 @@ class howitzer: public QGraphicsPixmapItem
 public:
     howitzer(int px, int py,double tilt, bool spin, unsigned char efficiency);
     void Actualizar(int px, int py, double tilt ,bool spin, unsigned char efficiency);
+    void shoot();
     shell *bullet;
     double Px, Py, Tilt;
 

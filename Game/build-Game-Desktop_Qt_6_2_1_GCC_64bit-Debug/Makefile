@@ -600,6 +600,7 @@ qrc_images.cpp: ../Game/images.qrc \
 		../Game/images/gray.jpeg \
 		../Game/images/black.jpeg \
 		../Game/images/left.png \
+		../Game/images/dresden.png \
 		../Game/images/howitz_0.png \
 		../Game/images/right.png \
 		../Game/images/howitz_3r.png \
@@ -776,6 +777,10 @@ moc_mainwindow.cpp: ../Game/mainwindow.h \
 		../Game/turret.h \
 		../Game/howitzer.h \
 		../Game/shell.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/QKeyEvent \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QPushButton \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qabstractbutton.h \
 		moc_predefs.h \
 		/home/jose/Qt/6.2.1/gcc_64/libexec/moc
 	/home/jose/Qt/6.2.1/gcc_64/libexec/moc $(DEFINES) --include /home/jose/Documentos/GitHub/ProyectoFinal/Game/build-Game-Desktop_Qt_6_2_1_GCC_64bit-Debug/moc_predefs.h -I/home/jose/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -I/home/jose/Documentos/GitHub/ProyectoFinal/Game/Game -I/home/jose/Qt/6.2.1/gcc_64/include -I/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets -I/home/jose/Qt/6.2.1/gcc_64/include/QtGui -I/home/jose/Qt/6.2.1/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Game/mainwindow.h -o moc_mainwindow.cpp
@@ -903,7 +908,8 @@ howitzer.o: ../Game/howitzer.cpp ../Game/howitzer.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qrgb.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qrgba64.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qimage.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpixelformat.h
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpixelformat.h \
+		../Game/shell.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o howitzer.o ../Game/howitzer.cpp
 
 main.o: ../Game/main.cpp ../Game/mainwindow.h \
@@ -1060,6 +1066,10 @@ main.o: ../Game/main.cpp ../Game/mainwindow.h \
 		../Game/turret.h \
 		../Game/howitzer.h \
 		../Game/shell.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/QKeyEvent \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QPushButton \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qabstractbutton.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QApplication \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qapplication.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qcoreapplication.h \
@@ -1237,36 +1247,11 @@ mainwindow.o: ../Game/mainwindow.cpp ../Game/mainwindow.h \
 		../Game/turret.h \
 		../Game/howitzer.h \
 		../Game/shell.h \
-		ui_mainwindow.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QVariant \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QApplication \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qapplication.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qcoreapplication.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qeventloop.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qfuture.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qfutureinterface.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qmutex.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qresultstore.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qfuture_impl.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qthreadpool.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qthread.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qdeadlinetimer.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qelapsedtimer.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qrunnable.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qexception.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qapplicationpermission.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qcoreapplication_platform.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qguiapplication.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qinputmethod.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qlocale.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qguiapplication_platform.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QMenuBar \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qmenubar.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qmenu.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qaction.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QStatusBar \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qstatusbar.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QWidget
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/QKeyEvent \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QPushButton \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qabstractbutton.h \
+		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../Game/mainwindow.cpp
 
 shell.o: ../Game/shell.cpp ../Game/shell.h \
@@ -1591,7 +1576,8 @@ turret.o: ../Game/turret.cpp ../Game/turret.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qbrush.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qfont.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpen.h \
-		../Game/howitzer.h
+		../Game/howitzer.h \
+		../Game/shell.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o turret.o ../Game/turret.cpp
 
 wall.o: ../Game/wall.cpp ../Game/wall.h \

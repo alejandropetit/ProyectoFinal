@@ -9,7 +9,7 @@ public:
     shell(int px, int py, double tilt, bool spin);
     void Actualizar( int px, int py , double tilt,bool spin);
     void move(double T);
-    double Px, Py, Vx = 10, Vy = -10;
+    double Px, Py, Vx = 40, Vy = -40;
 
 private:
     double Tilt;

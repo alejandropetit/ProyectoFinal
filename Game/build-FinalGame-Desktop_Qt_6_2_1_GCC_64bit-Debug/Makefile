@@ -608,6 +608,7 @@ qrc_imagenes.cpp: ../FinalGame/imagenes.qrc \
 		/home/jose/Qt/6.2.1/gcc_64/libexec/rcc \
 		../FinalGame/images/howitz_1r.png \
 		../FinalGame/images/howitz_2r.png \
+		../FinalGame/images/plane.png \
 		../FinalGame/images/gray.jpeg \
 		../FinalGame/images/black.jpeg \
 		../FinalGame/images/sarajevo.png \
@@ -615,11 +616,13 @@ qrc_imagenes.cpp: ../FinalGame/imagenes.qrc \
 		../FinalGame/images/aleppo.png \
 		../FinalGame/images/dresden.png \
 		../FinalGame/images/howitz_0.png \
+		../FinalGame/images/explosion.png \
 		../FinalGame/images/right.png \
 		../FinalGame/images/howitz_3r.png \
 		../FinalGame/images/1.png \
 		../FinalGame/images/howitz_1.png \
 		../FinalGame/images/tank.png \
+		../FinalGame/images/helicopter.png \
 		../FinalGame/images/howitz_3.png \
 		../FinalGame/images/school.png \
 		../FinalGame/images/howitz_2.png \
@@ -783,6 +786,7 @@ moc_mainwindow.cpp: ../FinalGame/mainwindow.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
 		../FinalGame/grafHowitzer.h \
 		../FinalGame/grafShell.h \
+		../FinalGame/grafTarget.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QTimer \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qtimer.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qbasictimer.h \
@@ -1231,10 +1235,12 @@ grafHowitzer.o: ../FinalGame/grafHowitzer.cpp ../FinalGame/grafHowitzer.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qrgba64.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qimage.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpixelformat.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QTimer \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qtimer.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qbasictimer.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QObject
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QObject \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QGraphicsScene \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qbrush.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qfont.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpen.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o grafHowitzer.o ../FinalGame/grafHowitzer.cpp
 
 grafShell.o: ../FinalGame/grafShell.cpp ../FinalGame/grafShell.h \
@@ -1339,11 +1345,7 @@ grafShell.o: ../FinalGame/grafShell.cpp ../FinalGame/grafShell.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qrgb.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qrgba64.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qimage.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpixelformat.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QTimer \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qtimer.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qbasictimer.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QObject
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpixelformat.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o grafShell.o ../FinalGame/grafShell.cpp
 
 grafTarget.o: ../FinalGame/grafTarget.cpp ../FinalGame/grafTarget.h \
@@ -1565,9 +1567,6 @@ grafTurret.o: ../FinalGame/grafTurret.cpp ../FinalGame/grafTurret.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpen.h \
 		../FinalGame/grafHowitzer.h \
 		../FinalGame/grafShell.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QTimer \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qtimer.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qbasictimer.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QObject
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o grafTurret.o ../FinalGame/grafTurret.cpp
 
@@ -1830,6 +1829,7 @@ main.o: ../FinalGame/main.cpp ../FinalGame/mainwindow.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
 		../FinalGame/grafHowitzer.h \
 		../FinalGame/grafShell.h \
+		../FinalGame/grafTarget.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QTimer \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qtimer.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qbasictimer.h \
@@ -2028,6 +2028,7 @@ mainwindow.o: ../FinalGame/mainwindow.cpp ../FinalGame/mainwindow.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
 		../FinalGame/grafHowitzer.h \
 		../FinalGame/grafShell.h \
+		../FinalGame/grafTarget.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QTimer \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qtimer.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qbasictimer.h \
@@ -2058,7 +2059,37 @@ mainwindow.o: ../FinalGame/mainwindow.cpp ../FinalGame/mainwindow.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QString \
 		../FinalGame/popup.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/QCloseEvent \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QVariant \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/QAction \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qaction.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QApplication \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qapplication.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qeventloop.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qfuture.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qmutex.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qresultstore.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qfuture_impl.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qthreadpool.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qthread.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qrunnable.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qexception.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qapplicationpermission.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qcoreapplication_platform.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qguiapplication.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qinputmethod.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qguiapplication_platform.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QMenu \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qmenu.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QMenuBar \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qmenubar.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QStatusBar \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qstatusbar.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../FinalGame/mainwindow.cpp
 
 popup.o: ../FinalGame/popup.cpp ../FinalGame/popup.h \
@@ -2196,7 +2227,29 @@ popup.o: ../FinalGame/popup.cpp ../FinalGame/popup.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qframe.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpicture.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qtextdocument.h \
-		ui_popup.h
+		ui_popup.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QVariant \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QApplication \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qapplication.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qeventloop.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qfuture.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qmutex.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qresultstore.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qfuture_impl.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qthreadpool.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qthread.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qrunnable.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qexception.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qapplicationpermission.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qcoreapplication_platform.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qguiapplication.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qinputmethod.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qlocale.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qguiapplication_platform.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o popup.o ../FinalGame/popup.cpp
 
 signin.o: ../FinalGame/signin.cpp ../FinalGame/signin.h \
@@ -2337,7 +2390,48 @@ signin.o: ../FinalGame/signin.cpp ../FinalGame/signin.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpicture.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qtextdocument.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/QCloseEvent \
-		ui_signin.h
+		ui_signin.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QVariant \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QApplication \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qapplication.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qeventloop.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qfuture.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qmutex.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qresultstore.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qfuture_impl.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qthreadpool.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qthread.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qrunnable.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qexception.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qapplicationpermission.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qcoreapplication_platform.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qguiapplication.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qinputmethod.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qlocale.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qguiapplication_platform.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QCheckBox \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qcheckbox.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qicon.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qlayout.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qgridlayout.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QLineEdit \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qlineedit.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qtextcursor.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qtextformat.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpen.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qtextoption.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QPushButton \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QVBoxLayout \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o signin.o ../FinalGame/signin.cpp
 
 qrc_imagenes.o: qrc_imagenes.cpp 

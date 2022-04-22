@@ -30,27 +30,26 @@
      <height>22</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuMejoras">
-    <property name="title">
-     <string>Mejoras</string>
-    </property>
-    <addaction name="separator"/>
-   </widget>
    <widget class="QMenu" name="menuNiveles">
     <property name="title">
      <string>Niveles</string>
     </property>
    </widget>
-   <widget class="QMenu" name="menuMenu_Principal">
+   <widget class="QMenu" name="menuMenu">
     <property name="title">
-     <string>Menu Principal</string>
+     <string>Menu</string>
     </property>
+    <addaction name="actionMenu_Principal"/>
    </widget>
-   <addaction name="menuMejoras"/>
+   <addaction name="menuMenu"/>
    <addaction name="menuNiveles"/>
-   <addaction name="menuMenu_Principal"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionMenu_Principal">
+   <property name="text">
+    <string>Menu Principal</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

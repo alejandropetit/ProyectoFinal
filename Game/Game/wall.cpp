@@ -10,7 +10,7 @@ wall::wall(int px, int py, int width, int height, double tilt , bool bounce)
 
 QRectF wall::boundingRect() const
 {
-    return QRectF(-Px/2,-Py/2,Width,Height);
+    return QRectF(Px,Py,Width,Height);
 }
 
 void wall::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
@@ -19,6 +19,7 @@ void wall::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
     painter->setBrush(QBrush(pared));
     painter->drawRect(boundingRect());
     this->setRotation(Tilt);
+    //this->setPos(Px,Py);
 
 }
 

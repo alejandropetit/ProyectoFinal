@@ -2,30 +2,13 @@
 
 grafWall::grafWall(int px, int py, int width, int height, double tilt , bool bounce)
 {
-    Px = px, Py = py, Width = width, Height = height, Tilt = tilt;
     if(bounce) pared.load(":/images/black.jpeg"), color = Qt::black;
     else pared.load(":/images/gray.jpeg"), color = Qt::gray;
-
+    QBrush textura(pared);
+    QPen pen(Qt::black,2);
+    setRect(0,0,width,height);
+    setPos(px,py);
+    setRotation(tilt);
+    setPen(pen);
+    setBrush(textura);
 }
-
-
-
-
-QRectF grafWall::boundingRect() const
-{
-    return QRectF(Px,Py,Width,Height);
-}
-
-
-
-void grafWall::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
-{
-    painter->setPen(QPen(color, 1));
-    painter->setBrush(QBrush(pared));
-    painter->drawRect(boundingRect());
-    //painter->rotate(0.5);
-    //this->setTransformOriginPoint(0,0);
-    this->setRotation(Tilt);
-
-}
-

@@ -20,5 +20,8 @@
         <file>images/aleppo.png</file>
         <file>images/tank.png</file>
         <file>images/school.png</file>
+        <file>images/plane.png</file>
+        <file>images/helicopter.png</file>
+        <file>images/explosion.png</file>
     </qresource>
 </RCC>
