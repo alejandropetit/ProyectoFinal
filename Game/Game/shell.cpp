@@ -11,7 +11,7 @@ shell::shell(int px, int py, double tilt, bool spin)
 
 void shell::Actualizar(int px, int py, double tilt, bool spin)
 {
-    Px = px+109*cos((tilt+4)*M_PI/180), Py = py+109*sin((tilt+4)*M_PI/180);
+    Px = px+137*cos((tilt+3)*M_PI/180), Py = py+137*sin((tilt+3)*M_PI/180);
     this->setRotation(tilt);
     this->setPos(Px,Py);
 }
@@ -19,7 +19,7 @@ void shell::Actualizar(int px, int py, double tilt, bool spin)
 void shell::move(double T)
 {
     double ax = 0, ay = 9.8;
-    if(Py < 500){
+    if(Py < 600){
         Vx = Vx + (ax*T);
         Vy = Vy + (ay*T);
         Px = Px + (Vx*T);

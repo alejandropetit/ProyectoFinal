@@ -3,16 +3,14 @@
 
 #include <QPainter>
 #include <QGraphicsItem>
+#include <QGraphicsRectItem>
 
-class grafWall: public QGraphicsItem
+class grafWall: public QGraphicsRectItem
 {
 public:
     grafWall(int px, int py, int width, int height, double tilt , bool bounce);
-    QRectF boundingRect() const;
-    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
 private:
-    int Px, Py, Width, Height, Tilt;
     QColor color;
     QPixmap pared;
 };

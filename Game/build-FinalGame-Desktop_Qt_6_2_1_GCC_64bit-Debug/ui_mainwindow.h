@@ -23,11 +23,11 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QAction *actionMenu_Principal;
     QWidget *centralwidget;
     QMenuBar *menubar;
-    QMenu *menuMejoras;
     QMenu *menuNiveles;
-    QMenu *menuMenu_Principal;
+    QMenu *menuMenu;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -38,27 +38,26 @@ public:
         MainWindow->setAutoFillBackground(false);
         MainWindow->setStyleSheet(QString::fromUtf8("background-color: rgb(46, 52, 54);\n"
 ""));
+        actionMenu_Principal = new QAction(MainWindow);
+        actionMenu_Principal->setObjectName(QString::fromUtf8("actionMenu_Principal"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 800, 22));
-        menuMejoras = new QMenu(menubar);
-        menuMejoras->setObjectName(QString::fromUtf8("menuMejoras"));
         menuNiveles = new QMenu(menubar);
         menuNiveles->setObjectName(QString::fromUtf8("menuNiveles"));
-        menuMenu_Principal = new QMenu(menubar);
-        menuMenu_Principal->setObjectName(QString::fromUtf8("menuMenu_Principal"));
+        menuMenu = new QMenu(menubar);
+        menuMenu->setObjectName(QString::fromUtf8("menuMenu"));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         MainWindow->setStatusBar(statusbar);
 
-        menubar->addAction(menuMejoras->menuAction());
+        menubar->addAction(menuMenu->menuAction());
         menubar->addAction(menuNiveles->menuAction());
-        menubar->addAction(menuMenu_Principal->menuAction());
-        menuMejoras->addSeparator();
+        menuMenu->addAction(actionMenu_Principal);
 
         retranslateUi(MainWindow);
 
@@ -68,9 +67,9 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        menuMejoras->setTitle(QCoreApplication::translate("MainWindow", "Mejoras", nullptr));
+        actionMenu_Principal->setText(QCoreApplication::translate("MainWindow", "Menu Principal", nullptr));
         menuNiveles->setTitle(QCoreApplication::translate("MainWindow", "Niveles", nullptr));
-        menuMenu_Principal->setTitle(QCoreApplication::translate("MainWindow", "Menu Principal", nullptr));
+        menuMenu->setTitle(QCoreApplication::translate("MainWindow", "Menu", nullptr));
     } // retranslateUi
 
 };

@@ -17,7 +17,9 @@
 #include <QDebug>
 #include "signin.h"
 #include <QTimer>
+#include <list>
 
+using namespace std;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -30,6 +32,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void inicio();
     void ocultar();
     void nivel();
     void dresden();
@@ -37,8 +40,8 @@ public:
     void grozni();
     void aleppo();
 
-protected:
-    void keyPressEvent(QKeyEvent *press);
+//protected:
+    //void keyPressEvent(QKeyEvent *press);
 
 
 private slots:
@@ -48,6 +51,9 @@ private slots:
     void total();
     void disparar();
     void Actualizar();
+    void mover();
+
+    void on_actionMenu_Principal_triggered();
 
 private:
     Ui::MainWindow *ui;
@@ -65,8 +71,15 @@ private:
     grafTarget *tank;
     signin *ventana;
     QTimer *time;
-    int i = 1;
+    QTimer *time1;
+    int i = 0;
     double T ;
+    bool k = 1;
+
+    list<grafWall *> murosb;
+    list<grafWall *> murosg;
+    list<grafTarget *> enemies;
+    list<grafTarget *> friends;
 
 };
 #endif // MAINWINDOW_H

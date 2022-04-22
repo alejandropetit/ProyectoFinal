@@ -13,17 +13,15 @@ class grafHowitzer : public QGraphicsPixmapItem, public QObject
 {
 public:
     grafHowitzer(int px, int py,double tilt, bool spin, unsigned char efficiency);
-    //int px, int py, double joules, double shellMass,double tilt, bool spin, unsigned char efficiency
     void Actualizar(int px, int py, double tilt ,bool spin, unsigned char efficiency);
-    void shoot(QGraphicsScene *scene,double mass, double joules, double tilt, double T);
+    void shoot();
     grafShell *bullet;
+    double Px, Py, Tilt;
 
 
 private:
-    //grafShell *bullet;
-    double Px , Py ;
     bool Spin;
-    double Tilt, vx,vy;
+    double  vx,vy;
     QString hr = ":/images/howitz_0r.png", hl = ":/images/howitz_0.png";
     QPixmap howitzer ;//= QPixmap(":/imagenes/howitz_0.png");
     QPixmap sh;

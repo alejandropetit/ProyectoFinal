@@ -14,7 +14,7 @@ public:
 
 private:
     int MovePattern, count = 1, Interval;
-    double Vx = 6, Vy = -20, Px, Py, V = 6;
+    double Vx = 6, Vy = -20, Px, Py;
     QPixmap  Target;
 };
 

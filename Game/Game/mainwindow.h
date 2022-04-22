@@ -11,6 +11,10 @@
 #include "howitzer.h"
 #include "shell.h"
 #include <QKeyEvent>
+#include <list>
+#include <QPushButton>
+
+using namespace std;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -23,10 +27,13 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void dresden();
 
-
+protected:
+    void keyPressEvent(QKeyEvent *press);
 
 public slots:
+    void shoot();
     void move();
 
 private:
@@ -38,6 +45,11 @@ private:
     target *Target;
     shell *Shell;
     turret *Turret;
+    list<wall *> muros;
+    //list<wall *> murosb;
+    list<target *> enemies;
+    list<target *> friends;
+    QPushButton *button[3];
     double t = 0;
 
 };
