@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = FinalGame1.0.0
-DISTDIR = /home/jose/Documentos/GitHub/ProyectoFinal/Game/build-FinalGame-Desktop_Qt_6_2_1_GCC_64bit-Debug/.tmp/FinalGame1.0.0
+DISTDIR = /home/jose/Documentos/GitHub/game/Game/build-FinalGame-Desktop_Qt_6_2_1_GCC_64bit-Debug/.tmp/FinalGame1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-rpath,/home/jose/Qt/6.2.1/gcc_64/lib -Wl,-rpath-link,/home/jose/Qt/6.2.1/gcc_64/lib
 LIBS          = $(SUBLIBS) /home/jose/Qt/6.2.1/gcc_64/lib/libQt6Widgets.so /home/jose/Qt/6.2.1/gcc_64/lib/libQt6Gui.so /home/jose/Qt/6.2.1/gcc_64/lib/libQt6Core.so -lpthread -lGL   
@@ -782,14 +782,12 @@ moc_mainwindow.cpp: ../FinalGame/mainwindow.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/QPainter \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpainter.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qtextoption.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		../FinalGame/grafTurret.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
 		../FinalGame/grafHowitzer.h \
 		../FinalGame/grafShell.h \
 		../FinalGame/grafTarget.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QTimer \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qtimer.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qbasictimer.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QLabel \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qlabel.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qframe.h \
@@ -817,9 +815,12 @@ moc_mainwindow.cpp: ../FinalGame/mainwindow.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QString \
 		../FinalGame/popup.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/QCloseEvent \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QTimer \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qtimer.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qbasictimer.h \
 		moc_predefs.h \
 		/home/jose/Qt/6.2.1/gcc_64/libexec/moc
-	/home/jose/Qt/6.2.1/gcc_64/libexec/moc $(DEFINES) --include /home/jose/Documentos/GitHub/ProyectoFinal/Game/build-FinalGame-Desktop_Qt_6_2_1_GCC_64bit-Debug/moc_predefs.h -I/home/jose/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -I/home/jose/Documentos/GitHub/ProyectoFinal/Game/FinalGame -I/home/jose/Qt/6.2.1/gcc_64/include -I/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets -I/home/jose/Qt/6.2.1/gcc_64/include/QtGui -I/home/jose/Qt/6.2.1/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../FinalGame/mainwindow.h -o moc_mainwindow.cpp
+	/home/jose/Qt/6.2.1/gcc_64/libexec/moc $(DEFINES) --include /home/jose/Documentos/GitHub/game/Game/build-FinalGame-Desktop_Qt_6_2_1_GCC_64bit-Debug/moc_predefs.h -I/home/jose/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -I/home/jose/Documentos/GitHub/game/Game/FinalGame -I/home/jose/Qt/6.2.1/gcc_64/include -I/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets -I/home/jose/Qt/6.2.1/gcc_64/include/QtGui -I/home/jose/Qt/6.2.1/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../FinalGame/mainwindow.h -o moc_mainwindow.cpp
 
 moc_popup.cpp: ../FinalGame/popup.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QDialog \
@@ -958,7 +959,7 @@ moc_popup.cpp: ../FinalGame/popup.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qtextdocument.h \
 		moc_predefs.h \
 		/home/jose/Qt/6.2.1/gcc_64/libexec/moc
-	/home/jose/Qt/6.2.1/gcc_64/libexec/moc $(DEFINES) --include /home/jose/Documentos/GitHub/ProyectoFinal/Game/build-FinalGame-Desktop_Qt_6_2_1_GCC_64bit-Debug/moc_predefs.h -I/home/jose/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -I/home/jose/Documentos/GitHub/ProyectoFinal/Game/FinalGame -I/home/jose/Qt/6.2.1/gcc_64/include -I/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets -I/home/jose/Qt/6.2.1/gcc_64/include/QtGui -I/home/jose/Qt/6.2.1/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../FinalGame/popup.h -o moc_popup.cpp
+	/home/jose/Qt/6.2.1/gcc_64/libexec/moc $(DEFINES) --include /home/jose/Documentos/GitHub/game/Game/build-FinalGame-Desktop_Qt_6_2_1_GCC_64bit-Debug/moc_predefs.h -I/home/jose/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -I/home/jose/Documentos/GitHub/game/Game/FinalGame -I/home/jose/Qt/6.2.1/gcc_64/include -I/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets -I/home/jose/Qt/6.2.1/gcc_64/include/QtGui -I/home/jose/Qt/6.2.1/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../FinalGame/popup.h -o moc_popup.cpp
 
 moc_signin.cpp: ../FinalGame/signin.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QDialog \
@@ -1100,7 +1101,7 @@ moc_signin.cpp: ../FinalGame/signin.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/QCloseEvent \
 		moc_predefs.h \
 		/home/jose/Qt/6.2.1/gcc_64/libexec/moc
-	/home/jose/Qt/6.2.1/gcc_64/libexec/moc $(DEFINES) --include /home/jose/Documentos/GitHub/ProyectoFinal/Game/build-FinalGame-Desktop_Qt_6_2_1_GCC_64bit-Debug/moc_predefs.h -I/home/jose/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -I/home/jose/Documentos/GitHub/ProyectoFinal/Game/FinalGame -I/home/jose/Qt/6.2.1/gcc_64/include -I/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets -I/home/jose/Qt/6.2.1/gcc_64/include/QtGui -I/home/jose/Qt/6.2.1/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../FinalGame/signin.h -o moc_signin.cpp
+	/home/jose/Qt/6.2.1/gcc_64/libexec/moc $(DEFINES) --include /home/jose/Documentos/GitHub/game/Game/build-FinalGame-Desktop_Qt_6_2_1_GCC_64bit-Debug/moc_predefs.h -I/home/jose/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -I/home/jose/Documentos/GitHub/game/Game/FinalGame -I/home/jose/Qt/6.2.1/gcc_64/include -I/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets -I/home/jose/Qt/6.2.1/gcc_64/include/QtGui -I/home/jose/Qt/6.2.1/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../FinalGame/signin.h -o moc_signin.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -1450,11 +1451,7 @@ grafTarget.o: ../FinalGame/grafTarget.cpp ../FinalGame/grafTarget.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qrgb.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qrgba64.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qimage.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpixelformat.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QTimer \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qtimer.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qbasictimer.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QObject
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpixelformat.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o grafTarget.o ../FinalGame/grafTarget.cpp
 
 grafTurret.o: ../FinalGame/grafTurret.cpp ../FinalGame/grafTurret.h \
@@ -1680,7 +1677,8 @@ grafWall.o: ../FinalGame/grafWall.cpp ../FinalGame/grafWall.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qstringconverter.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qset.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qcontiguouscache.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpainterpath.h
+		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpainterpath.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QGraphicsRectItem
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o grafWall.o ../FinalGame/grafWall.cpp
 
 main.o: ../FinalGame/main.cpp ../FinalGame/mainwindow.h \
@@ -1825,14 +1823,12 @@ main.o: ../FinalGame/main.cpp ../FinalGame/mainwindow.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/QPainter \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpainter.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qtextoption.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		../FinalGame/grafTurret.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
 		../FinalGame/grafHowitzer.h \
 		../FinalGame/grafShell.h \
 		../FinalGame/grafTarget.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QTimer \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qtimer.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qbasictimer.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QLabel \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qlabel.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qframe.h \
@@ -1860,6 +1856,9 @@ main.o: ../FinalGame/main.cpp ../FinalGame/mainwindow.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QString \
 		../FinalGame/popup.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/QCloseEvent \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QTimer \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qtimer.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qbasictimer.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QApplication \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qapplication.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qcoreapplication.h \
@@ -2024,14 +2023,12 @@ mainwindow.o: ../FinalGame/mainwindow.cpp ../FinalGame/mainwindow.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/QPainter \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qpainter.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/qtextoption.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		../FinalGame/grafTurret.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
 		../FinalGame/grafHowitzer.h \
 		../FinalGame/grafShell.h \
 		../FinalGame/grafTarget.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QTimer \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qtimer.h \
-		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qbasictimer.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/QLabel \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qlabel.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtWidgets/qframe.h \
@@ -2059,6 +2056,9 @@ mainwindow.o: ../FinalGame/mainwindow.cpp ../FinalGame/mainwindow.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QString \
 		../FinalGame/popup.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/QCloseEvent \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QTimer \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qtimer.h \
+		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/qbasictimer.h \
 		ui_mainwindow.h \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtCore/QVariant \
 		/home/jose/Qt/6.2.1/gcc_64/include/QtGui/QAction \

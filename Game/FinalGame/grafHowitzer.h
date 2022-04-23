@@ -1,8 +1,6 @@
 #ifndef GRAFHOWITZER_H
 #define GRAFHOWITZER_H
 
-//#define W ":/imagenes/howitz_0.png"
-//#include <QGraphicsItem>
 #include "grafShell.h"
 #include <QGraphicsPixmapItem>
 #include <QObject>
@@ -14,7 +12,6 @@ class grafHowitzer : public QGraphicsPixmapItem, public QObject
 public:
     grafHowitzer(int px, int py,double tilt, bool spin, unsigned char efficiency);
     void Actualizar(int px, int py, double tilt ,bool spin, unsigned char efficiency);
-    void shoot();
     grafShell *bullet;
     double Px, Py, Tilt;
 

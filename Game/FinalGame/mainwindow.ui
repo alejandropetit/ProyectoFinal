@@ -39,7 +39,22 @@
     <property name="title">
      <string>Menu</string>
     </property>
-    <addaction name="actionMenu_Principal"/>
+    <widget class="QMenu" name="menuniveles">
+     <property name="title">
+      <string>niveles</string>
+     </property>
+     <addaction name="separator"/>
+     <addaction name="actionDresden"/>
+     <addaction name="separator"/>
+     <addaction name="actionSarajevo"/>
+     <addaction name="separator"/>
+     <addaction name="actionGrozni"/>
+     <addaction name="separator"/>
+     <addaction name="actionAleppo"/>
+     <addaction name="separator"/>
+    </widget>
+    <addaction name="menuniveles"/>
+    <addaction name="actionSalir"/>
    </widget>
    <addaction name="menuMenu"/>
    <addaction name="menuNiveles"/>
@@ -48,6 +63,31 @@
   <action name="actionMenu_Principal">
    <property name="text">
     <string>Menu Principal</string>
+   </property>
+  </action>
+  <action name="actionDresden">
+   <property name="text">
+    <string>Dresden</string>
+   </property>
+  </action>
+  <action name="actionSarajevo">
+   <property name="text">
+    <string>Sarajevo</string>
+   </property>
+  </action>
+  <action name="actionGrozni">
+   <property name="text">
+    <string>Grozni</string>
+   </property>
+  </action>
+  <action name="actionAleppo">
+   <property name="text">
+    <string>Aleppo</string>
+   </property>
+  </action>
+  <action name="actionSalir">
+   <property name="text">
+    <string>Salir</string>
    </property>
   </action>
  </widget>

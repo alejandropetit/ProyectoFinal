@@ -38,18 +38,6 @@ void grafHowitzer::Actualizar(int px, int py, double tilt, bool spin, unsigned c
     this->setPos(px,py);
 }
 
-void grafHowitzer::shoot()//QGraphicsScene *scene, double mass, double joules, double tilt, double T)
-{
-    bullet->Actualizar(Px,Py,Tilt,Spin);
-    bullet->move(0.1);
-    //vx = (2*joules)/(mass*cos(tilt));
-    //vy = (2*joules)/(mass*sin(tilt));
-    //scene->addItem(bullet);
-    //setPos(90,90);
-    //bullet -> move(T);
 
-
-
-}
 
 

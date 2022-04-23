@@ -34,7 +34,6 @@ public:
     ~MainWindow();
     void inicio();
     void ocultar();
-    void nivel();
     void dresden();
     void sarajevo();
     void grozni();
@@ -52,28 +51,38 @@ private slots:
     void disparar();
     void Actualizar();
     void mover();
+    void change();
 
-    void on_actionMenu_Principal_triggered();
+    void on_actionDresden_triggered();
+
+    void on_actionSarajevo_triggered();
+
+    void on_actionGrozni_triggered();
+
+    void on_actionAleppo_triggered();
+
+    void on_actionSalir_triggered();
 
 private:
     Ui::MainWindow *ui;
     QGraphicsScene *scene;
-    grafWall *muro[2];
+    //grafWall *muro[2];
     grafTurret *turret;
-    QPushButton *button[3];
+    QPushButton *button[4];
     QLabel *label[5];
     QDoubleSpinBox *spinbox[3];
     QGraphicsView *graphicsview;
     QGroupBox *box;
-    grafShell *shell;
-    grafHowitzer *howitzer;
-    grafTarget *school;
-    grafTarget *tank;
+    //grafShell *shell;
+    //grafHowitzer *howitzer;
+    //grafTarget *school;
+    //grafTarget *tank;
     signin *ventana;
     QTimer *time;
     QTimer *time1;
+    QString nivel;
     int i = 0;
-    double T ;
+    double T, win ;
     bool k = 1;
 
     list<grafWall *> murosb;

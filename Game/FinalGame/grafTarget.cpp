@@ -19,7 +19,7 @@ grafTarget::grafTarget(int px, int py, int image, int movepattern, double tilt, 
     Target.load(":/images/plane.png");
     setPixmap(Target.scaled(169,60));
     }
-    Vx = V*cos(-Tilt*180/M_PI), Vy = V*sin(-Tilt*180/M_PI);
+    Vx = V*cos(Tilt*M_PI/180), Vy = V*sin(Tilt*M_PI/180);
     setRotation(tilt);
     setPos(Px, Py);
 }
@@ -96,6 +96,9 @@ void grafTarget::move(double T)
         Py = Py_+Interval*sin(0.1*count*M_PI/180)+(Interval/4)*sin(0.5*count*M_PI/180);
         setPos(Px,Py);
     }break;
+    case 8:{
+
+    };
     }
 }
 
